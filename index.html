@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aunia Tazkiyaturrahmah</title>
+  <style>
+    /* Global Styles */
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f1f1f1;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      background-color: palevioletred;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .header .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .navbar a {
+      margin: 0 10px;
+      color: white;
+    }
+
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 50px 20px;
+      background-color: pink;
+    }
+
+    .hero h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+
+    .hero .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: palevioletred;
+      color: white;
+      border-radius: 5px;
+    }
+
+    .hero .btn:hover {
+      background-color: pink;
+    }
+
+    /* Tentang Saya Section */
+    .tentang-kami {
+      padding: 10px;
+      text-align: center;
+    }
+
+    .tentang-kami h2 {
+      font-size: 2rem;
+      background-color: palevioletred;
+      margin-bottom: 10px;
+      border-radius: 20px;
+    }
+
+    .tentang-kami-content {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: pink;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .tentang-kami-foto {
+      width: 150px;
+      height: 150px;
+      border-radius: 10px;
+      margin: 0 auto;  /* Memusatkan gambar secara horizontal */
+      display: block;  /* Menjadikan gambar sebagai blok untuk memfasilitasi pemusatan */
+    }
+
+    .tentang-kami p {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .tentang-kami > small {
+      color: palevioletred;
+    }
+
+    /* Informasi Pemilik Section */
+    .informasi-pemilik {
+      padding: 40px 20px;
+      background-color: #e3c9d1; /* Soft background for the section */
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .informasi-pemilik h2 {
+      font-size: 2rem;
+      color: palevioletred;
+      margin-bottom: 20px;
+    }
+
+    .informasi-pemilik-content {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      color: #333;
+    }
+
+    .informasi-pemilik-foto {
+      width: 200px; 
+      height: 200px;
+      border-radius: 100%; 
+      margin: 0 auto 20px auto; 
+      display: block; 
+
+    }
+    /* Produk Section */
+    .produk {
+      padding: 20px;
+      background-color: palevioletred;
+      text-align: center;
+    }
+
+    .produk h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .produk-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Menambah sedikit ruang untuk setiap item */
+      gap: 20px;
+    }
+
+    .produk-item {
+      border: 1px solid #ddd;
+      padding: 15px;
+      background-color: white;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .produk-item img {
+      margin-bottom: 10px;
+    }
+
+    .produk-item button {
+      background-color: pink;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .produk-item button:hover {
+      background-color: palevioletred;
+    }
+
+    /* Tentang dan Kontak */
+    .tentang, .kontak {
+      padding: 20px;
+      background-color: pink;
+      text-align: center;
+    }
+
+    .tentang h2, .kontak h2 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    .kontak p {
+      margin: 5px 0;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 10px;
+      background-color: palevioletred;
+      color: white;
+    }
+
+    /* Responsiveness */
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+      }
+
+      .produk-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">Sweet Anta'zz Style</div>
+    <nav class="navbar">
+      <a href="#home">Home</a>
+      <a href="#Tentang Kami">Tentang</a>
+      <a href="#informasi-pemilik">Informasi Pemilik</a>
+      <a href="#produk">Produk</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <h1>Selamat Datang, Kecantikan Dimulai Dari PilihanMu DiSini </h1>
+    <p>"Kami Disini Untuk Memastikan Setiap Langkahmu Penuh Percaya Diri"</p>
+    <a href="#produk" class="btn">Belanja Sekarang</a>
+  </section>
+
+  <!-- Tentang Kami -->
+  <section id="Tentang Kami" class="tentang-kami">
+    <h2>Tentang Kami</h2>
+    <div class="tentang-kami-content">
+      <img src="https://www.onlinelogomaker.com/blog/wp-content/uploads/2017/06/fashion-logos.jpg" alt="Foto Logo" class="tentang-kami-foto">
+      <p>
+        Dengan kombinasi baju yang stylish dan harga terjangkau, saya ingin membantu Anda menemukan gaya terbaik yang mencerminkan kepribadian unik Anda. Terima kasih telah mengunjungi Sweet style – tempat di mana gaya dan kenyamanan bertemu.
+      </p>
+    </div>
+  </section>
+
+  <!-- Informasi Pemilik -->
+  <section id="informasi-pemilik" class="informasi-pemilik">
+    <h2>Informasi Pemilik</h2>
+    <!-- Menambahkan Foto Pemilik -->
+    <img src="nia.jpg" alt="Foto Pemilik" class="informasi-pemilik-foto">
+    <div class="informasi-pemilik-content">
+      <p>
+        Halo! Saya Aunia Tazkiyaturrahmah, Mahasiswi Universitas Yatsi Madani seorang pecinta fashion dan pemilik Toko Sweet Style bersemangat untuk menghadirkan koleksi baju yang modis dan cocok untuk setiap gaya. Tujuan saya adalah memberikan pengalaman belanja yang menyenangkan dan memuaskan bagi setiap pelanggan. 
+      </p>
+    </div>
+  </section>
+
+  <!-- Produk Section -->
+  <section id="produk" class="produk">
+    <h2>Koleksi Kami</h2>
+    <div class="produk-grid">
+      <div class="produk-item">
+        <img src="gamis.jpg" alt="Baju 1">
+        <h3>Anta'zz Series</h3>
+        <small>Cocok untuk Desain yang simpel Tapi Anggun </small>
+        <p>Rp 150.000</p>
+        <button>Beli Sekarang</button>
+      </div>
+      <div class="produk-item">
+        <img src="atasan.jpg" alt="Baju 2">
+        <h3>Anta'zz Series</h3>
+        <small>Berkesan feminim Dan Anggun </small>
+        <p>Rp 450.000</p>
+        <button>Beli Sekarang</button>
+      </div>
+      <div class="produk-item">
+        <img src="levis.jpg" alt="Baju 3">
+        <h3>Anta'zz Series</h3>
+        <small>Gaya Kasual Modern Untuk Sehari Hari</small>
+        <p>Rp 280.000</p>
+        <button>Beli Sekarang</button>
+      </div>
+      <div class="produk-item">
+        <img src="mejaq.jpg" alt="Baju 4">
+        <h3>Anta'zz Series</h3>
+        <small>Untuk Kemeja Berbahan Nyaman Dan Premium</small>
+        <p>Rp 300.000</p>
+        <button>Beli Sekarang</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontak Section -->
+  <section id="kontak" class="kontak">
+    <h2>Hubungi Kami</h2>
+    <p>Email: Tazkiyaturrahmahaunia@gmail.com</p>
+    <p>Telepon: 083854188040 </p>
+    <p>Alamat: Jl. Aria Santika rt03/03</p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2024 Sweet style. Semua Hak Dilindungi.</p>
+    <p>Dipersembahkan oleh Aunia Tazkiyaturrahmah, Pemilik Sweet Style.</p>
+  </footer>
+</body>
+</html>
